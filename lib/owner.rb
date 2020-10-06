@@ -66,6 +66,6 @@ class Owner
   def lits_pets
     cats = Cat.all.select {|cat| cat.owner == self}
     dogs = Dog.all.select {|dog| dog.owner == self}
-    "I have "
+    #"I have "
   
 end
