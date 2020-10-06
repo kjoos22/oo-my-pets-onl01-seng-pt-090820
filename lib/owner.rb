@@ -41,21 +41,19 @@ class Owner
   end
   
   def walk_dogs
-    #dogs = Dog.all.select {|dog| dog.owner == self}
     self.dogs.each do |dog|
       dog.mood = "happy"
     end
   end
   
   def feed_cats
-    cats = Cat.all.select {|cat| cat.owner == self}
-    cats.each do |cat|
+   self.cats.each do |cat|
       cat.mood = "happy"
     end
   end
   
   def sell_pets
-    pets = Cat.all.select {|cat| cat.owner == self} +
+    pets = self.dogs + self.cats
            Dog.all.select {|dog| dog.owner == self}
     pets.each do |pet|
       pet.mood = "nervous"
