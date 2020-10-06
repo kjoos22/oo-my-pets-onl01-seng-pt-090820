@@ -54,7 +54,6 @@ class Owner
   
   def sell_pets
     pets = self.dogs + self.cats
-           Dog.all.select {|dog| dog.owner == self}
     pets.each do |pet|
       pet.mood = "nervous"
       pet.owner = nil
