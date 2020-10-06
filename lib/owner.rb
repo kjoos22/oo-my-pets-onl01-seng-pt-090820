@@ -42,7 +42,7 @@ class Owner
   
   def walk_dogs
     dogs = Dog.all.select {|dog| dog.owner == self}
-    dogs.each do |dog|
+    self.dogs.each do |dog|
       dog.mood = "happy"
     end
   end
@@ -62,5 +62,10 @@ class Owner
       pet.owner = nil
     end
   end
+  
+  def lits_pets
+    cats = Cat.all.select {|cat| cat.owner == self}
+    dogs = Dog.all.select {|dog| dog.owner == self}
+    "I have "
   
 end
